@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Fond avec dégradé -->
+    <rect width="512" height="512" fill="url(#gradient-bg)"/>
+    
+    <!-- Livre -->
+    <path d="M128 96h256v320H128c-17.7 0-32-14.3-32-32V128c0-17.7 14.3-32 32-32z" fill="#1B1464"/>
+    <path d="M384 96h32c17.7 0 32 14.3 32 32v256c0 17.7-14.3 32-32 32h-32V96z" fill="#2E279D"/>
+    
+    <!-- Pages -->
+    <path d="M384 96H128c-17.7 0-32 14.3-32 32v256c0 17.7 14.3 32 32 32h256V96z" fill="white"/>
+    
+    <!-- Marque-page -->
+    <path d="M320 96v80l-32-16-32 16V96h64z" fill="#FF6B00"/>
+    
+    <!-- Texte stylisé -->
+    <rect x="160" y="200" width="192" height="8" rx="4" fill="#E0E0E0"/>
+    <rect x="160" y="240" width="160" height="8" rx="4" fill="#E0E0E0"/>
+    <rect x="160" y="280" width="176" height="8" rx="4" fill="#E0E0E0"/>
+    
+    <!-- Définitions des dégradés -->
+    <defs>
+        <linearGradient id="gradient-bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#1B1464"/>
+            <stop offset="100%" stop-color="#2E279D"/>
+        </linearGradient>
+    </defs>
+</svg> 

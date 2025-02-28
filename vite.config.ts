@@ -19,29 +19,29 @@ export default defineConfig({
           {
             src: 'pwa-64x64.png',
             sizes: '64x64',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any'
+            purpose: 'any',
           },
           {
             src: 'maskable-icon-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'maskable'
-          }
+            purpose: 'maskable',
+          },
         ],
         start_url: '/',
         display: 'standalone',
-        categories: ['books', 'education', 'lifestyle']
+        categories: ['books', 'education', 'lifestyle'],
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
@@ -53,9 +53,9 @@ export default defineConfig({
               cacheName: 'api-cache',
               networkTimeoutSeconds: 5,
               cacheableResponse: {
-                statuses: [0, 200]
-              }
-            }
+                statuses: [0, 200],
+              },
+            },
           },
           {
             urlPattern: /^https:\/\/pwa-cms\.ln1\.eu.*\.(png|jpg|jpeg|svg|gif)$/,
@@ -63,21 +63,24 @@ export default defineConfig({
             options: {
               cacheName: 'image-cache',
               cacheableResponse: {
-                statuses: [0, 200]
+                statuses: [0, 200],
               },
               expiration: {
                 maxEntries: 100,
-                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 jours
-              }
-            }
-          }
-        ]
-      }
-    })
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 jours
+              },
+            },
+          },
+        ],
+      },
+    }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
-}) 
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  preview: {
+    allowedHosts: ['bookverse.ln1.eu'],
+  },
+})

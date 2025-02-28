@@ -21,6 +21,8 @@
 
   <InstallPWA />
 
+  <ConnectionStatus />
+
   <footer role="contentinfo">
     <p>&copy; 2024 BookVerse - Tous droits réservés</p>
   </footer>
@@ -28,16 +30,17 @@
 
 <script setup lang="ts">
 import InstallPWA from './components/InstallPWA.vue'
+import ConnectionStatus from '@/components/ConnectionStatus.vue'
 </script>
 
 <style>
 :root {
-  --primary-color: #1B1464;
-  --accent-color: #FF6B00;
-  --background-color: #F5F5F5;
+  --primary-color: #1b1464;
+  --accent-color: #ff6b00;
+  --background-color: #f5f5f5;
   --text-color: #333333;
-  --card-background: #FFFFFF;
-  --header-gradient: linear-gradient(135deg, #1B1464 0%, #2E279D 100%);
+  --card-background: #ffffff;
+  --header-gradient: linear-gradient(135deg, #1b1464 0%, #2e279d 100%);
   --card-shadow: 0 4px 15px rgba(27, 20, 100, 0.1);
   --hover-shadow: 0 6px 20px rgba(27, 20, 100, 0.15);
 }
@@ -49,12 +52,19 @@ import InstallPWA from './components/InstallPWA.vue'
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family:
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
-  background-image: 
-    linear-gradient(120deg, rgba(168, 198, 159, 0.1) 0%, rgba(244, 247, 242, 0.1) 100%);
+  background-image: linear-gradient(
+    120deg,
+    rgba(168, 198, 159, 0.05) 0%,
+    rgba(244, 247, 242, 0.05) 100%
+  );
 }
 
 header {
@@ -94,9 +104,9 @@ main {
   margin: 2rem auto;
   padding: 2rem;
   min-height: calc(100vh - 140px);
-  background-color: white;
+  background-color: var(--card-background);
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(74, 103, 65, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -119,4 +129,4 @@ footer {
 .router-view-leave-to {
   opacity: 0;
 }
-</style> 
+</style>

@@ -1,7 +1,12 @@
 <template>
   <article class="book-card" :aria-labelledby="'book-title-' + book.id">
-    <router-link :to="{ name: 'book-detail', params: { id: book.id }}" class="book-link">
-      <img :src="book.coverImage" :alt="'Couverture du livre ' + book.title" class="book-image" loading="lazy">
+    <router-link :to="{ name: 'book-detail', params: { id: book.id } }" class="book-link">
+      <img
+        :src="book.coverImage"
+        :alt="'Couverture du livre ' + book.title"
+        class="book-image"
+        loading="lazy"
+      />
       <div class="book-info">
         <h3 :id="'book-title-' + book.id" class="book-title">{{ book.title }}</h3>
         <p class="book-author">par {{ book.author }}</p>
@@ -16,9 +21,9 @@ defineProps({
     type: Object,
     required: true,
     validator: (book) => {
-      return book.id && book.title && book.author && book.image
-    }
-  }
+      return book.id && book.title && book.author && book.coverImage
+    },
+  },
 })
 </script>
 
@@ -75,11 +80,7 @@ defineProps({
 
 .book-info {
   padding: 1.5rem;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.95),
-    rgba(255, 255, 255, 1)
-  );
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 1));
 }
 
 .book-title {
@@ -108,7 +109,7 @@ defineProps({
 }
 
 .view-details:hover {
-  background: #E65D00;
+  background: #e65d00;
   transform: translateY(-2px);
 }
 
@@ -141,9 +142,9 @@ defineProps({
   .book-image {
     transition: none;
   }
-  
+
   .book-card:hover .book-image {
     transform: none;
   }
 }
-</style> 
+</style>
